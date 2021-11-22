@@ -46,7 +46,7 @@ currentDate.innerHTML = `${day}, ${date} ${month} ${year}`;
 
 function displayTemperature(response) {
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#currently").innerHTML = Math.round(
+  document.querySelector("#current-temperature").innerHTML = Math.round(
     response.data.main.temp
   );
 }
