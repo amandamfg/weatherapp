@@ -46,9 +46,15 @@ currentDate.innerHTML = `${day}, ${date} ${month} ${year}`;
 
 function displayTemperature(response) {
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#current-temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  let temperatureElement = (document.querySelector(
+    "#current-temperature"
+  ).innerHTML = Math.round(response.data.main.temp));
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+
+  let celsiusTemperature = response.data.main.temp;
+  humidityElement.innerHTML = response.data.main.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
 }
 
 function showSearch(event) {
@@ -66,5 +72,29 @@ function showSearch(event) {
     alert("Try again");
   }
 }
+
+function displayFTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#current-temperature");
+  let fahrenheitConvert = (celsiusTemperature * 9) / 5 + 32;
+
+  temperatureElement.innerHTML = Math.round(fahrenheitConvert);
+}
+
+function displayCTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#current-temperature");
+
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", showSearch);
+
+let fahrenheitLink = document.querySelector("#convert-fahrenheit");
+fahrenheitLink.addEventListener("click", displayFTemperature);
+
+let celsiusLink = document.querySelector("#convert-celsius");
+celsiusLink.addEventListener("click", displayCTemperature);

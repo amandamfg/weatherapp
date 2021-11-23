@@ -18,7 +18,7 @@
     <div class="container">
       <div class="app">
         <form id="search-form">
-          <input id="search-bar" type="text" placeholder="Which city?" />
+          <input id="search-bar" type="search" placeholder="Which city?" />
 
           <div id="city"></div>
           <ul>
@@ -31,13 +31,15 @@
               <div class="nameofBoxes">Currently</div>
               <div class="border border-2 rounded-circle text-center lh-lg">
                 <span id="currently">
-                  <strong id="current-temperature"> 12 </strong>
-                  <span class="units"> ºC | ºF </span>
+                  <strong id="current-temperature"> </strong>
+                  <span class="units">
+                    <a href="#" id="convert-celsius"> ºC</a> |
+                    <a href="#" id="convert-fahrenheit"> ºF</a>
+                  </span>
                 </span>
                 <ul>
-                  <li>Precipitation: 0%</li>
-                  <li>Humidity: 80%</li>
-                  <li>Wind: 5km/h</li>
+                  <li>Humidity: <span id="humidity"> </span>%</li>
+                  <li>Wind: <span id="wind"> </span>%</li>
                 </ul>
               </div>
             </div>
