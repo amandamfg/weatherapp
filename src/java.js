@@ -61,7 +61,7 @@ function displayForecast(response) {
       forecastHTML =
         forecastHTML +
         `
-                  <div class="col-2">
+                  <div class="col-6">
                   <div class = "weather-forecast-date">
                     ${formatDay(forecastDay.dt)} </div> 
                    
@@ -71,7 +71,7 @@ function displayForecast(response) {
                     
                     <span class = "weather-forecast-max"> ${Math.round(
                       forecastDay.temp.max
-                    )}°</span>;
+                    )}°</span>
                     <span class = "weather-forecast-min"> ${Math.round(
                       forecastDay.temp.min
                     )}°</span> 
@@ -123,14 +123,6 @@ function showSearch(event) {
   }
 }
 
-function displayFTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#current-temperature");
-  let fahrenheitConvert = (celsiusTemperature * 9) / 5 + 32;
-
-  temperatureElement.innerHTML = Math.round(fahrenheitConvert);
-}
-
 function displayCTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#current-temperature");
@@ -142,9 +134,6 @@ let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", showSearch);
-
-let fahrenheitLink = document.querySelector("#convert-fahrenheit");
-fahrenheitLink.addEventListener("click", displayFTemperature);
 
 let celsiusLink = document.querySelector("#convert-celsius");
 celsiusLink.addEventListener("click", displayCTemperature);
