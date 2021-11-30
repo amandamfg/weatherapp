@@ -5,6 +5,8 @@
   padding: 20px;
   border: 1px solid;
   border-radius: 10px;
+  background-color: rgb(12, 12, 61);
+  color: whitesmoke;
 }
 #search-bar {
   text-align: center;
