@@ -27,9 +27,10 @@
   margin-top: 25px;
   font-weight: bold;
 }
+
 .nameofBoxes {
   font-size: 20px;
-  margin-top: 25px;
+  margin-top: 10px;
   text-align: center;
 }
 
@@ -37,8 +38,13 @@ ul {
   list-style: none;
 }
 
+#humidity #wind {
+  color: red;
+}
+
 #current-temperature {
   font-size: 60px;
+  text-align: center;
 }
 
 .units {
@@ -50,4 +56,9 @@ ul {
 .col-6 {
   text-align: center;
   font-size: 15px;
+}
+
+.link {
+  text-align: center;
+  color: rgb(12, 12, 61);
 }
